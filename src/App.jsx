@@ -1,4 +1,4 @@
-import { Link, Route, Routes } from "react-router-dom"
+import { Link, Route, Routes, useLocation } from "react-router-dom"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import BookList from "./pages/BookList"
@@ -10,12 +10,15 @@ import BookRoutes from "./BookRoutes"
 
 function App() {
 
+  const location = useLocation();
+  console.log(location);
+
   return (
     <>
       <nav>
         <ul>
           <li>
-            <Link to="/"> Home </Link>
+            <Link to="/" state={{firstName: 'raza', lastName: 'khan'}}> Home </Link>
           </li>
           <li>
             <Link to="/about"> About </Link>
@@ -26,6 +29,7 @@ function App() {
         </ul>
       </nav>
 
+      <p>{JSON.stringify(location.state)}</p>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
