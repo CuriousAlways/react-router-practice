@@ -4,6 +4,7 @@ import About from "./pages/About"
 import BookList from "./pages/BookList"
 import NotFound from "./pages/NotFound"
 import Book from "./pages/Book"
+import NewBook from "./pages/NewBook"
 
 function App() {
 
@@ -26,8 +27,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/books" element={<BookList />} />
+        <Route path="/books">
+          <Route index element={<BookList />} />
+          <Route path=":id" element={<Book />} />
+          <Route path="new" element={<NewBook />} />
+        </Route>
+        {/* <Route path="/books" element={<BookList />} />
         <Route path="/books/:id" element={<Book />} />
+        <Route path="/books/new" element={<NewBook />} /> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
