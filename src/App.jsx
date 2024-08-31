@@ -6,6 +6,7 @@ import NotFound from "./pages/NotFound"
 import Book from "./pages/Book"
 import NewBook from "./pages/NewBook"
 import BooksLayout from "./layouts/BooksLayout"
+import BookRoutes from "./BookRoutes"
 
 function App() {
 
@@ -28,11 +29,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/books" element={<BooksLayout />}>
+        <Route path="/books/*" element={<BookRoutes />} />
+        {/* <Route path="/books" element={<BooksLayout />}>
           <Route index element={<BookList />} />
           <Route path=":id" element={<Book />} />
           <Route path="new" element={<NewBook />} />
-        </Route>
+        </Route> */}
         {/* <Route path="/books" element={<BookList />} />
         <Route path="/books/:id" element={<Book />} />
         <Route path="/books/new" element={<NewBook />} /> */}
