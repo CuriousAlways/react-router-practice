@@ -212,3 +212,9 @@ console.log(location.state);
 <NavLink state={{a: 1}} to="/"> Home </NavLink>
 <Link state="raza" to="/books"> Books </Link>
 ```
+
+
+### References
+- [React Router Tutorial-video](https://www.youtube.com/watch?v=Ul3y1LXxzdU)
+- [cheatsheet](https://blog.webdevsimplified.com/2022-07/react-router/)
+- [React Router](https://reactrouter.com/en/main)
